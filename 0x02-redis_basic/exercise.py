@@ -89,7 +89,6 @@ class Cache:
                                                                     float]:
         """
         Retrieves the data associated with the given key from Redis.
-        If the `fn` argument is provided, applies the conversion function to the retrieved data.
         """
         res = self._redis.get(key)
         return fn(res) if fn else res
